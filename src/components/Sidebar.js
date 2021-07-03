@@ -9,6 +9,7 @@ class Sidebar extends React.Component{
 
     render(){
         return(
+          
              <Router>
                    <Nav defaultActiveKey="/home" className="flex-column">
                    <Nav.Link href="/home">Create New Note</Nav.Link>
