@@ -20,35 +20,19 @@ class AllCard extends React.Component {
   };
 
   render() {
-      console.log(this.state.cardsNotes)
     return (
-      <div class="d-flex flex-wrap">
-        <GlobalCards
-          id={this.state.cardsNotes._data}
-          name="GianLucas"
-          description="I'm GianLucas ñfmg oirejnv oinv ovlnfe"
-          myNote="I'mljnvfdj fjonvoefj oeirjnvoefj oihvofnv oijvoifn ikjdfovefnk ioforvn pifjvpdfiobv pidjfoviknmd pidfbvoi odfknvpfdknv fivnfe"
-        />
-        <GlobalCards
-          name="GianLucas"
-          description="I'm GianLucas ñfmg oirejnv oinv ovlnfe"
-          myNote="I'mljnvfdj fjonvoefj oeirjnvoefj oihvofnv oijvoifn ikjdfovefnk ioforvn pifjvpdfiobv pidjfoviknmd pidfbvoi odfknvpfdknv fivnfe"
-        />
-        <GlobalCards
-          name="GianLucas"
-          description="I'm GianLucas ñfmg oirejnv oinv ovlnfe"
-          myNote="I'mljnvfdj fjonvoefj oeirjnvoefj oihvofnv oijvoifn ikjdfovefnk ioforvn pifjvpdfiobv pidjfoviknmd pidfbvoi odfknvpfdknv fivnfeov goverg oirefnejorv ihfejr vefjubviv erhfcer vnfrvi rvijbver vejriv b fgj ji fvjo fkgjuo oj fghj gp grj gijnjfhuoviknmd pidfbvoi odfknvpfdknv fivnfeov goverg oirefnejorv ihfejr vefjubviv erhfcer vnfrvi rvijbver vejriv b fgj ji fvjo fkgjuo oj fghj gp grj gijnjfhu"
-        />
-        <GlobalCards
-          name="GianLucas"
-          description="I'm GianLucas ñfmg oirejnv oinv ovlnfe"
-          myNote="I'mljnvfdj fjonvoefj oeirjnvoefj oihvofnv oijvoifn ikjdfovefnk ioforvn pifjvpdfiobv pidjfoviknmd pidfbvoi odfknvpfdknv fivnfeov goverg oirefnejorv ihfejr vefjubviv erhfcer vnfrvi rvijbver vejriv b fgj ji fvjo fkgjuo oj fghj gp grj gijnjfhuoviknmd pidfbvoi odfknvpfdknv fivnfeov goverg oirefnejorv ihfejr vefjubviv erhfcer vnfrvi rvijbver vejriv b fgj ji fvjo fkgjuo oj fghj gp grj gijnjfhu"
-        />
-        <GlobalCards
-          name="GianLucas"
-          description="I'm GianLucas ñfmg oirejnv oinv ovlnfe"
-          myNote="I'mljnvfdj fjonvoefj oeirjnvoefj oihvofnv oijvoifn ikjdfovefnk ioforvn pifjvpdfiobv pidjfoviknmd pidfbvoi odfknvpfdknv fivnfe"
-        />
+      <div className="d-flex flex-wrap">
+          
+        {this.state.cardsNotes.map((cardsNotes) => {
+          return (
+            <GlobalCards
+              id={cardsNotes._id}
+              name={cardsNotes.cardName}
+              description={cardsNotes.description}
+              myNote={cardsNotes.myNote}
+            />
+          );
+        })}
       </div>
     );
   }
