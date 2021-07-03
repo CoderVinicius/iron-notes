@@ -5,13 +5,15 @@ import './App.css'
 
 import Navbar from './Navbar'
 import AllCard from "./AllCards";
+import CardDetails from "./CardDetails";
 
 function App() {
   return (
     <div >
       <BrowserRouter>
       
-      <Route path="/" component={AllCard} />
+      <Route exact path="/" component={AllCard} />
+      <Route path="/details/:id" component={CardDetails} />
         
       </BrowserRouter>
       </div>

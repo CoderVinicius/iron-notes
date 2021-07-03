@@ -14,3 +14,7 @@
     color:white;
     width: 10rem;   
 }
+
+.card-body{
+    text-decoration: none;
+}

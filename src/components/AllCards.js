@@ -1,10 +1,10 @@
 import React from "react";
-import GlobalCards from "./GlobalCards";
 import axios from "axios";
+import GlobalCards from "./GlobalCards";
 
 class AllCard extends React.Component {
   state = {
-    cardsNotes: [],
+    cards: []
   };
 
   componentDidMount = async () => {
@@ -12,7 +12,7 @@ class AllCard extends React.Component {
       const response = await axios
         .get("https://ironrest.herokuapp.com/IronNote")
         .then((response) => {
-          this.setState({ cardsNotes: { ...response.data } });
+          this.setState({ cards:  [...response.data]  });
         });
     } catch (err) {
       console.log(err);
@@ -23,13 +23,13 @@ class AllCard extends React.Component {
     return (
       <div className="d-flex flex-wrap">
           
-        {this.state.cardsNotes.map((cardsNotes) => {
+        {this.state.cards.map((cards) => {
           return (
             <GlobalCards
-              id={cardsNotes._id}
-              name={cardsNotes.cardName}
-              description={cardsNotes.description}
-              myNote={cardsNotes.myNote}
+              id={cards._id}
+              name={cards.cardName}
+              description={cards.description}
+              myNote={cards.myNote}
             />
           );
         })}
