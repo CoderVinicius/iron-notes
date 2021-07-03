@@ -6,6 +6,7 @@ import './App.css'
 import Navbar from './Navbar'
 import AllCard from "./AllCards";
 import CardDetails from "./CardDetails";
+import EditNote from "./EditNote";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <BrowserRouter>
       
       <Route exact path="/" component={AllCard} />
-      <Route path="/details/:id" component={CardDetails} />
+      <Route exact path="/details/:id" component={CardDetails} />
+      <Route path="/edit/:id" component={EditNote}/>
         
       </BrowserRouter>
       </div>

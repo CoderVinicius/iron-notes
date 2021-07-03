@@ -17,7 +17,7 @@ function GlobalCards(props) {
           <i class="far fa-star" style={{color:"cornsilk"}}></i>
           </Link>
           
-          <Link to="#" className="card-link">
+          <Link to={`/edit/${props.id}`} className="card-link">
           <i class="far fa-edit" style={{color:"cornsilk"}}></i>
           </Link>
           <Link to="#" className="card-link">

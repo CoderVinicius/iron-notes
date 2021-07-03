@@ -49,7 +49,7 @@ class CardDetails extends React.Component {
                 <i class="far fa-star" style={{ color: "cornsilk" }}></i>
               </Link>
 
-              <Link to="#" className="card-link">
+              <Link to={`/edit/${this.state._id}`} className="card-link">
                 <i class="far fa-edit" style={{ color: "cornsilk" }}></i>
               </Link>
               <Link to="#" className="card-link">
