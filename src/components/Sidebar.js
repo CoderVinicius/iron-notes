@@ -1,8 +1,6 @@
 import React from 'react'
-import {
-    BrowserRouter as Router,
-  } from "react-router-dom";
-  import { Nav, Button } from 'react-bootstrap'
+
+import { NavLink } from 'react-router-dom'
   
 
 class Sidebar extends React.Component{
@@ -10,13 +8,13 @@ class Sidebar extends React.Component{
     render(){
         return(
           
-             <Router>
-                   <Nav class='sidebar' defaultActiveKey="/home" className="flex-column">
-                   <Button class='btn-sidebar' eventKey="/">Create New Note</Button>
-                    <Button class='btn-sidebar' eventKey="/">All Notes</Button>
-                    <Button class='btn-sidebar' eventKey="/">Favorites</Button>
-                    </Nav>
-              </Router>   
+            <div class='side'>
+                   <div class='sidebar' className="flex-column">
+                   <NavLink activeClassName='active' class='btn-sidebar' to="/">Create New Note</NavLink>
+                    <NavLink activeClassName='active' class='btn-sidebar' to="/">All Notes</NavLink>
+                    <NavLink activeClassName='active' class='btn-sidebar' to="/">Favorites</NavLink>
+                    </div>
+           </div>
         )  
     }
 }

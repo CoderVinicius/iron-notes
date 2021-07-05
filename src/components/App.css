@@ -85,3 +85,15 @@ body {
 .card-body{
     text-decoration: none;
 }
+
+.container {
+  display: flex;
+  margin: 0;
+}
+
+.side{
+  width: 500px;
+}
+
+
+
