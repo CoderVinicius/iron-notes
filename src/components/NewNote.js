@@ -1,19 +1,19 @@
 import { Component } from "react";
 import axios from "axios";
 
-import TextInput from './TextInput'
-
+import InputGlobal from "./InputGlobal";
 
 
 class NewNote extends Component {
     state = {
-        cardName: "",
-        description: "",
-        myNote: "",
-      };
+      cardName: "",
+      comment: "",
+      description: "",
+      myNote: "",
+    }
 
   handleChange = (event) => {
-    this.setState({ [event.target.cardName]: event.target.value });
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   
@@ -21,8 +21,9 @@ class NewNote extends Component {
     event.preventDefault(); 
 
     axios
-      .post("https://ironrest.herokuapp.com/IronNote", this.state)
+      .post("https://sao-ironrest.herokuapp.com/IronNote", this.state)
       .then((response) => {
+        console.log(response);
         this.props.history.push("/");
       })
       .catch((err) => {
@@ -33,31 +34,39 @@ class NewNote extends Component {
   render() {
     return (
       <div>
-        <h1>NameCard</h1>
+        <h1>Create Note</h1>
         <hr />
         <form onSubmit={this.handleSubmit}>
-          <TextInput
-            label="Name card"
+          <InputGlobal
+            label="Name Card"
             type="text"
-            name="name"
+            name="cardName"
             onChange={this.handleChange}
-            value={this.state.nameCard}
+            value={this.state.CardName}
             required
           />
-          <TextInput
+          <InputGlobal
             label="Description"
             type="text"
             name="description"
             onChange={this.handleChange}
-            value={this.state.description}
+            value={this.state.Description}
             required
           />
-          <TextInput
+          <InputGlobal
             label="YourNote"
             type="text"
-            name="yourNote"
+            name="myNote"
             onChange={this.handleChange}
-            value={this.state.yourNote}
+            value={this.state.MyNote}
+            required
+          />
+           <InputGlobal
+            label="Comments"
+            type="text"
+            name="comment"
+            onChange={this.handleChange}
+            value={this.state.Comment}
             required
           />
 
