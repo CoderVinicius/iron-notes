@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import InpuGlobal from "./InputGlobal";
+import InputGlobal from "./InputGlobal";
 
 class EditNote extends React.Component {
   state = {
@@ -14,9 +14,8 @@ class EditNote extends React.Component {
   componentDidMount = async () => {
     try {
       const id = this.props.match.params.id;
-
-      const response = await axios
-        .get(`https://ironrest.herokuapp.com/IronNote/${id}`)
+       const response = await axios
+        .get(`https://sao-ironrest.herokuapp.com/IronNote/${id}`)
         .then((response) => {
           console.log(response.data);
           this.setState({ ...response.data });
@@ -35,7 +34,7 @@ class EditNote extends React.Component {
     event.preventDefault();
 
     axios
-      .post(`https://ironrest.herokuapp.com/IronNote/grupo4/${id}`, this.state)
+      .post (`https://ironrest.herokuapp.com/IronNote/grupo4/${id}`, this.state)
       .then((response) => {
         // console.log(response);
         this.props.history.push("/");
@@ -51,14 +50,14 @@ class EditNote extends React.Component {
       <div>
         <h1 className="mb-3">Edit Notes</h1>
         <form onSubmit={this.handleSubmit}>
-          <InpuGlobal
+          <InputGlobal
             nameInput="cardName"
             value={this.state.cardName}
             name="cardName"
             Change={this.handleChange}
           />
 
-          <InpuGlobal
+          <InputGlobal
             nameInput="Description"
             value={this.state.description}
             name="description"

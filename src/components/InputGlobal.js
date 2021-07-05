@@ -1,20 +1,18 @@
-function InpuGlobal(props) {
+function TextInput(props) {
   return (
-    <div className="input-group mb-3">
-      <span className="input-group-text" id="inputGroup-sizing-default">
-        {props.nameInput}
-      </span>
+    <div className="form-group mb-3">
+      <label htmlFor={props.id}>{props.label}</label>
       <input
-        value={props.value}
-        type="text"
-        name={props.name}
-        onChange={props.Change}
+        id={props.id}
+        type={props.type}
         className="form-control"
-        aria-label="Sizing example input"
-        aria-describedby="inputGroup-sizing-default"
+        onChange={props.onChange}
+        value={props.value}
+        name={props.name}
+        required={props.required}
       />
     </div>
   );
 }
 
-export default InpuGlobal;
+export default TextInput; 
