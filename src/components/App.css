@@ -85,3 +85,8 @@ body {
 .card-body{
     text-decoration: none;
 }
+
+
+.input-group{
+  width: 35em;
+}
