@@ -1,10 +1,8 @@
 
 
 body {
-    background-color: rgba(255,255,255,1);
+    background-color: #4a4641;
     font-family: 'Google Sans',Roboto,Arial,sans-serif;
-    height: 850px;
-    width: 1500px;
 }
 
 
@@ -30,7 +28,8 @@ body {
 
 .navbar {
   display: flex;
-  box-shadow: inset 0 -1px 0 0 #dadce0;
+  margin-bottom: 1em;
+  box-shadow: inset 0 -1px 0 0 #78746e;
   width: 100%;
 }
 
@@ -74,7 +73,7 @@ body {
     padding: 10px;
     border-radius: 30px;
     margin: 15px;
-    box-shadow: 0 0 0.8em gray;
+    box-shadow: 0 0 0.9em rgb(30, 22, 22);
 }
 
 .cardsHr{
@@ -91,3 +90,22 @@ body {
   width: 25em;
 }
 
+.list-group-item{
+  width: 10em;
+  margin-right: 4em;
+  background-color: rgb(228, 212, 212);
+}
+
+.editNote{
+  margin-top: 1em;
+  margin-left: 1.5em;
+}
+
+.editTitle{
+  color: rgb(255, 255, 255);
+}
+
+
+.cardEdit{
+  margin-left: 4em;
+}

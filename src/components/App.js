@@ -16,7 +16,7 @@ function App() {
       <BrowserRouter>
       <div className="container mt-4">
       <Nav/>
-      <div className="d-flex justify-content-lg-around">
+      <div className="d-flex">
       <Sidebar/>
       <Route exact path="/" component={AllCard} />
       <Route exact path="/details/:id" component={CardDetails} />

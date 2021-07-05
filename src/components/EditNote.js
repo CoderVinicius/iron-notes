@@ -47,8 +47,8 @@ class EditNote extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1 className="mb-3">Edit Notes</h1>
+      <div className="editNote">
+        <h1 className="editTitle mb-3">Edit Notes</h1>
         <div className="d-flex">
           <form onSubmit={this.handleSubmit}>
             <InputGlobal
@@ -87,8 +87,8 @@ class EditNote extends React.Component {
           </form>
 
           <div
-            className="card cardsBorder"
-            style={{ width: "18rem", backgroundColor: "#222831" }}
+            className="cardEdit cardsBorder"
+            style={{ width: "20rem", backgroundColor: "#222831" }}
           >
             <div className="card-body">
               <h5 className="card-title" style={{ color: "white" }}>
@@ -118,6 +118,11 @@ class EditNote extends React.Component {
               </a>
             </div>
           </div>
+
+
+
+
+          
         </div>
       </div>
     );
