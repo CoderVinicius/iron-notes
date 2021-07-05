@@ -9,6 +9,7 @@ import AllCard from "./AllCards";
 import CardDetails from "./CardDetails";
 import EditNote from "./EditNote";
 
+
 function App() {
   return (
     <div >
