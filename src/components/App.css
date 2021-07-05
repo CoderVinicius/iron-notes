@@ -66,3 +66,22 @@ body {
   color: black;
   margin-bottom: 10 px;
 }
+
+.cardsBorder{
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid;
+    padding: 10px;
+    border-radius: 30px;
+    margin: 15px;
+    box-shadow: 0 0 0.8em gray;
+}
+
+.cardsHr{
+    color:white;
+    width: 10rem;   
+}
+
+.card-body{
+    text-decoration: none;
+}

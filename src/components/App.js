@@ -5,15 +5,22 @@ import './App.css';
 
 import Nav from "./Nav";
 import Sidebar from './Sidebar';
-
+import AllCard from "./AllCards";
+import CardDetails from "./CardDetails";
+import EditNote from "./EditNote";
 
 function App() {
   return (
-     <BrowserRouter>
+    <div >
+      <BrowserRouter>
       <Nav/>
       <Sidebar/>
-     </BrowserRouter> 
-      
+      <Route exact path="/" component={AllCard} />
+      <Route exact path="/details/:id" component={CardDetails} />
+      <Route path="/edit/:id" component={EditNote}/>
+        
+      </BrowserRouter>
+      </div>
   );
 }
 
