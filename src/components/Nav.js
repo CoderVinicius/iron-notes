@@ -9,7 +9,7 @@ class BootstrapNavbar extends React.Component{
 
     render(){
         return(
-                <div class='navbar' className="row w-100">
+                <div className="navbar" className="row w-100">
                     <Router>
                     <Navbar>
                     <Navbar.Brand>Iron Notes</Navbar.Brand>
