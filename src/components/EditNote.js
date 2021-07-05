@@ -29,24 +29,33 @@ class EditNote extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+
+
+  
   handleSubmit = (event) => {
-    const id = this.props.match.params.id;
+    let id = this.props.match.params.id;
     event.preventDefault();
 
     axios
-      .put(`https://ironrest.herokuapp.com/IronNote/${id}`, this.state)
+      .put(`https://ironrest.herokuapp.com/IronNote/grupo4/${id}`, this.state)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
+        this.props.history.push("/")
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
+
+
+
+
   render() {
-    console.log(this.state.cardName);
+
     return (
       <div>
+        <h1 className="mb-4">Edit Notes</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="input-group mb-3">
             <span className="input-group-text" id="inputGroup-sizing-default">
