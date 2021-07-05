@@ -2,7 +2,7 @@ import React from 'react'
 import {
     BrowserRouter as Router,
   } from "react-router-dom";
-  import { Navbar,Nav,Form,FormControl,Button } from 'react-bootstrap'
+  import { Nav, Button } from 'react-bootstrap'
   
 
 class Sidebar extends React.Component{
@@ -11,10 +11,10 @@ class Sidebar extends React.Component{
         return(
           
              <Router>
-                   <Nav defaultActiveKey="/home" className="flex-column">
-                   <Nav.Link href="/home">Create New Note</Nav.Link>
-                    <Nav.Link eventKey="link-1">All Notes</Nav.Link>
-                    <Nav.Link eventKey="link-2">Favorites</Nav.Link>
+                   <Nav class='sidebar' defaultActiveKey="/home" className="flex-column">
+                   <Button class='btn-sidebar' eventKey="/">Create New Note</Button>
+                    <Button class='btn-sidebar' eventKey="/">All Notes</Button>
+                    <Button class='btn-sidebar' eventKey="/">Favorites</Button>
                     </Nav>
               </Router>   
         )  
