@@ -16,7 +16,7 @@ class EditNote extends React.Component {
       const id = this.props.match.params.id;
 
       const response = await axios
-        .get(`https://ironrest.herokuapp.com/IronNote/${id}`)
+        .get(`https://sao-ironrest.herokuapp.com/IronNote/${id}`)
         .then((response) => {
           console.log(response.data);
           this.setState({ ...response.data });
@@ -35,7 +35,7 @@ class EditNote extends React.Component {
     event.preventDefault();
 
     axios
-      .post(`https://ironrest.herokuapp.com/IronNote/grupo4/${id}`, this.state)
+      .post(`https://sao-ironrest.herokuapp.com/IronNote/${id}`, this.state)
       .then((response) => {
         // console.log(response);
         this.props.history.push("/");
@@ -46,16 +46,24 @@ class EditNote extends React.Component {
   };
 
   render() {
+    console.log("CardName= ", this.state.cardName)
+    console.log("Description= ", this.state.description)
 
     return (
       <div>
+      
         <h1 className="mb-3">Edit Notes</h1>
+        <div className="d-flex">
         <form onSubmit={this.handleSubmit}>
+
+
+          
           <InpuGlobal
-            nameInput="cardName"
+            nameInput="Note Name"
             value={this.state.cardName}
             name="cardName"
             Change={this.handleChange}
+            required
           />
 
           <InpuGlobal
@@ -63,18 +71,23 @@ class EditNote extends React.Component {
             value={this.state.description}
             name="description"
             Change={this.handleChange}
+            required
           />
 
-          <div class="form-floating">
+          <div className="form-floating">
             <textarea
               value={this.state.myNote}
               name="myNote"
               onChange={this.handleChange}
-              class="form-control"
+              class="textWrap form-control"
               placeholder="Leave a comment here"
+              required
             ></textarea>
             <label for="floatingTextarea">Comments</label>
           </div>
+
+
+
 
           {/* <div className="input-group mb-3">
             <span className="input-group-text" id="inputGroup-sizing-default">
@@ -132,10 +145,40 @@ class EditNote extends React.Component {
         </div> */}
 
           <hr />
-          <button className="btn btn-primary" type="submit">
+          <button className="btn" type="submit">
             Save
           </button>
         </form>
+        <div
+            className="card cardsBorder"
+            style={{ width: "18rem", backgroundColor: "#222831" }}
+          >
+            <div className="card-body">
+              <h5 className="card-title" style={{ color: "white" }}>
+                {this.state.cardName}
+              </h5>
+              <h6 className="card-subtitle mb-2" style={{ color: "#9a9998" }}>
+                {this.state.description}
+              </h6>
+              <p className="card-text" style={{ color: "white" }}>
+                {this.state.myNote}
+              </p>
+            </div>
+            <hr className="cardsHr" />
+            <div className="container">
+              <a className="card-link">
+                <i class="far fa-star" style={{ color: "cornsilk" }}></i>
+              </a>
+
+              <a className="card-link">
+                <i class="far fa-edit" style={{ color: "cornsilk" }}></i>
+              </a>
+              <a className="card-link">
+                <i class="far fa-trash-alt" style={{ color: "cornsilk" }}></i>
+              </a>
+            </div>
+            </div>
+      </div>
       </div>
     );
   }

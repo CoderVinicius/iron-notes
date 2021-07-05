@@ -15,7 +15,7 @@ class CardDetails extends React.Component {
     try {
       let id = this.props.match.params.id;
       const response = await axios
-        .get(`https://ironrest.herokuapp.com/IronNote/${id}`)
+        .get(`https://sao-ironrest.herokuapp.com/IronNote/${id}`)
         .then((response) => {
           this.setState({ ...response.data });
         });

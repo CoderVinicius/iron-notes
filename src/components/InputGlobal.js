@@ -5,6 +5,8 @@ function InpuGlobal(props) {
         {props.nameInput}
       </span>
       <input
+        maxlength="25"
+        required={true}
         value={props.value}
         type="text"
         name={props.name}
