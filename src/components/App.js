@@ -12,16 +12,18 @@ import EditNote from "./EditNote";
 
 function App() {
   return (
-    <div >
+
       <BrowserRouter>
       <Nav/>
+      <div className="d-flex">
       <Sidebar/>
       <Route exact path="/" component={AllCard} />
       <Route exact path="/details/:id" component={CardDetails} />
       <Route path="/edit/:id" component={EditNote}/>
-        
-      </BrowserRouter>
       </div>
+      
+      </BrowserRouter>
+
   );
 }
 

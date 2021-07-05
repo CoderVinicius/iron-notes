@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import InpuGlobal from "./InputGlobal";
 
 class EditNote extends React.Component {
   state = {
@@ -29,35 +30,53 @@ class EditNote extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-
-
-  
   handleSubmit = (event) => {
     let id = this.props.match.params.id;
     event.preventDefault();
 
     axios
-      .put(`https://ironrest.herokuapp.com/IronNote/grupo4/${id}`, this.state)
+      .post(`https://ironrest.herokuapp.com/IronNote/grupo4/${id}`, this.state)
       .then((response) => {
         // console.log(response);
-        this.props.history.push("/")
+        this.props.history.push("/");
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-
-
-
-
   render() {
 
     return (
       <div>
-        <h1 className="mb-4">Edit Notes</h1>
+        <h1 className="mb-3">Edit Notes</h1>
         <form onSubmit={this.handleSubmit}>
-          <div className="input-group mb-3">
+          <InpuGlobal
+            nameInput="cardName"
+            value={this.state.cardName}
+            name="cardName"
+            Change={this.handleChange}
+          />
+
+          <InpuGlobal
+            nameInput="Description"
+            value={this.state.description}
+            name="description"
+            Change={this.handleChange}
+          />
+
+          <div class="form-floating">
+            <textarea
+              value={this.state.myNote}
+              name="myNote"
+              onChange={this.handleChange}
+              class="form-control"
+              placeholder="Leave a comment here"
+            ></textarea>
+            <label for="floatingTextarea">Comments</label>
+          </div>
+
+          {/* <div className="input-group mb-3">
             <span className="input-group-text" id="inputGroup-sizing-default">
               NameCard
             </span>
@@ -98,7 +117,7 @@ class EditNote extends React.Component {
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-default"
             />
-          </div>
+          </div> */}
 
           {/* <div class="form-floating">
           <textarea
@@ -111,9 +130,10 @@ class EditNote extends React.Component {
           ></textarea>
           <label for="floatingTextarea">Comments</label>
         </div> */}
+
           <hr />
           <button className="btn btn-primary" type="submit">
-            Submit
+            Save
           </button>
         </form>
       </div>
