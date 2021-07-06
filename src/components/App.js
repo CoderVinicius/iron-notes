@@ -11,6 +11,7 @@ import CardDetails from "./CardDetails";
 import EditNote from "./EditNote";
 import DeleteNote from "./Delete";
 
+
 function App() {
   return (
     <BrowserRouter>
