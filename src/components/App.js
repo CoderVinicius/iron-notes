@@ -17,7 +17,7 @@ function App() {
   return (
     
       <BrowserRouter>
-      <div className="container mt-4">
+      <div className="mt-4">
       <Nav/>
       <div className="container">
       <Sidebar/>
@@ -27,12 +27,8 @@ function App() {
       <Route path="/edit/:id" component={EditNote}/>
       <Route path="/Delete/:id" component={DeleteNote} />
       </div>
-<<<<<<< HEAD
       </div>
-      
-      
-=======
->>>>>>> d1def754c183ea7018f8e08151b0042c00ae2e30
+
       </BrowserRouter>
     
   );

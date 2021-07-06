@@ -9,11 +9,7 @@ class AllCard extends React.Component {
 
   componentDidMount = async () => {
     try {
-<<<<<<< HEAD
       const response = await axios
-=======
-        await axios
->>>>>>> d1def754c183ea7018f8e08151b0042c00ae2e30
         .get("https://sao-ironrest.herokuapp.com/IronNote")
         .then((response) => {
           this.setState({ cards:  [...response.data]  });

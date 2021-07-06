@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 class BootstrapNavbar extends React.Component {
   render() {
     return (
-      <div className="navbar" className="row w-100">
+      <div>
         <nav className="navbar navbar-light bg-light">
           <div className="container-fluid">
             <Link to="/" className="navbar-brand">IronNote</Link>

@@ -13,12 +13,8 @@ class EditNote extends React.Component {
   componentDidMount = async () => {
     try {
       const id = this.props.match.params.id;
-<<<<<<< HEAD
 
       const response = await axios
-=======
-       const response = await axios
->>>>>>> d1def754c183ea7018f8e08151b0042c00ae2e30
         .get(`https://sao-ironrest.herokuapp.com/IronNote/${id}`)
         .then((response) => {
           console.log(response.data);
@@ -39,11 +35,7 @@ class EditNote extends React.Component {
     event.preventDefault();
 
     axios
-<<<<<<< HEAD
       .put(`https://sao-ironrest.herokuapp.com/IronNote/${id}`, this.state)
-=======
-      .post (`https://ironrest.herokuapp.com/IronNote/grupo4/${id}`, this.state)
->>>>>>> d1def754c183ea7018f8e08151b0042c00ae2e30
       .then((response) => {
         // console.log(response);
         this.props.history.push("/")
@@ -55,48 +47,12 @@ class EditNote extends React.Component {
 
   render() {
     return (
-<<<<<<< HEAD
       <div className="editNote">
         <h1 className="editTitle mb-3">Edit Notes</h1>
         <div className="d-flex">
           <form onSubmit={this.handleSubmit}>
             <InputGlobal
               label="Name Card"
-=======
-      <div>
-        <h1 className="mb-3">Edit Notes</h1>
-        <form onSubmit={this.handleSubmit}>
-          <InputGlobal
-            nameInput="cardName"
-            value={this.state.cardName}
-            name="cardName"
-            Change={this.handleChange}
-          />
-
-          <InputGlobal
-            nameInput="Description"
-            value={this.state.description}
-            name="description"
-            Change={this.handleChange}
-          />
-
-          <div class="form-floating">
-            <textarea
-              value={this.state.myNote}
-              name="myNote"
-              onChange={this.handleChange}
-              class="form-control"
-              placeholder="Leave a comment here"
-            ></textarea>
-            <label for="floatingTextarea">Comments</label>
-          </div>
-
-          {/* <div className="input-group mb-3">
-            <span className="input-group-text" id="inputGroup-sizing-default">
-              NameCard
-            </span>
-            <input
->>>>>>> d1def754c183ea7018f8e08151b0042c00ae2e30
               value={this.state.cardName}
               name="cardName"
               onChange={this.handleChange}
