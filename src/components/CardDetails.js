@@ -52,8 +52,8 @@ class CardDetails extends React.Component {
               <Link to={`/edit/${this.state._id}`} className="card-link">
                 <i className="far fa-edit" style={{ color: "cornsilk" }}></i>
               </Link>
-              <Link to="#" className="card-link">
-                <i className="far fa-trash-alt" style={{ color: "cornsilk" }}></i>
+              <Link to={`/Delete/${this.state._id}`} className="card-link">
+                <i class="far fa-trash-alt" style={{ color: "cornsilk" }}></i>
               </Link>
             </div>
           </div>

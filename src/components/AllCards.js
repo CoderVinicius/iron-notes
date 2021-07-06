@@ -12,7 +12,7 @@ class AllCard extends React.Component {
 
   componentDidMount = async () => {
     try {
-        await axios
+      const response = await axios
         .get("https://sao-ironrest.herokuapp.com/IronNote")
         .then((response) => {
           this.setState({ cards: [...response.data], filtered: [...response.data], favorites: []  });
@@ -58,8 +58,10 @@ class AllCard extends React.Component {
 
   render() {
     return (
+      <div>
+      <Search filterNotes={this.filterNotes}/>
       <div className="d-flex flex-wrap">
-        <Search filterNotes={this.filterNotes}/>
+        
         {this.state.filtered.map((cards) => {
           return (
             <GlobalCards
@@ -71,6 +73,7 @@ class AllCard extends React.Component {
             />
           );
         })}
+      </div>
       </div>
     );
   }

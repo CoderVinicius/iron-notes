@@ -4,7 +4,6 @@ import InputGlobal from "./InputGlobal";
 
 class EditNote extends React.Component {
   state = {
-    _id: "",
     cardName: "",
     comment: "",
     description: "",
@@ -15,11 +14,13 @@ class EditNote extends React.Component {
   componentDidMount = async () => {
     try {
       const id = this.props.match.params.id;
-       await axios
+
+      const response = await axios
         .get(`https://sao-ironrest.herokuapp.com/IronNote/${id}`)
         .then((response) => {
-          console.log(response.data);
+          delete response.data._id
           this.setState({ ...response.data });
+
         });
     } catch (err) {
       console.log(err);
@@ -31,13 +32,14 @@ class EditNote extends React.Component {
   };
 
   handleSubmit = (event) => {
+    console.log(this.state);
     let id = this.props.match.params.id;
     event.preventDefault();
-
     axios
-      .post (`https://ironrest.herokuapp.com/IronNote/grupo4/${id}`, this.state)
-      .then(() => {
-        this.props.history.push("/");
+      .put(`https://sao-ironrest.herokuapp.com/IronNote/${id}`, this.state)
+      .then((response) => {
+        
+        this.props.history.push("/")
       })
       .catch((err) => {
         console.log(err);
@@ -46,95 +48,85 @@ class EditNote extends React.Component {
 
   render() {
 
+    console.log("eu spou o props edit", this.props)
     return (
-      <div>
-        <h1 className="mb-3">Edit Notes</h1>
-        <form onSubmit={this.handleSubmit}>
-          <InputGlobal
-            nameInput="cardName"
-            value={this.state.cardName}
-            name="cardName"
-            Change={this.handleChange}
-          />
-
-          <InputGlobal
-            nameInput="Description"
-            value={this.state.description}
-            name="description"
-            Change={this.handleChange}
-          />
-
-          <div className="form-floating">
-            <textarea
-              value={this.state.myNote}
-              name="myNote"
-              onChange={this.handleChange}
-              className="form-control"
-              placeholder="Leave a comment here"
-            ></textarea>
-            <label for="floatingTextarea">Comments</label>
-          </div>
-
-          {/* <div className="input-group mb-3">
-            <span className="input-group-text" id="inputGroup-sizing-default">
-              NameCard
-            </span>
-            <input
+      <div className="editNote">
+        <h1 className="editTitle mb-3">Edit Notes</h1>
+        <div className="d-flex">
+          <form onSubmit={this.handleSubmit}>
+            <InputGlobal
+              label="Name Card"
               value={this.state.cardName}
-              type="text"
               name="cardName"
               onChange={this.handleChange}
-              className="form-control"
-              aria-label="Sizing example input"
-              aria-describedby="inputGroup-sizing-default"
+              required
             />
-          </div>
-          <div className="input-group mb-3">
-            <span className="input-group-text" id="inputGroup-sizing-default">
-              Description
-            </span>
-            <input
+
+            <InputGlobal
+              label="Description"
               value={this.state.description}
-              type="text"
               name="description"
               onChange={this.handleChange}
-              className="form-control"
-              aria-label="Sizing example input"
-              aria-describedby="inputGroup-sizing-default"
+              required
             />
+
+            <div className="form-floating">
+              <textarea
+                value={this.state.myNote}
+                name="myNote"
+                onChange={this.handleChange}
+                className="textWrap form-control"
+                placeholder="Leave a comment here"
+                required
+              ></textarea>
+              <label for="floatingTextarea">Comments</label>
+            </div>
+            <hr />
+            <div className="form-group">
+            <button type="submit" className="btn btn-primary">
+              Save
+            </button>
           </div>
-          <div className="input-group mb-3">
-            <span className="input-group-text" id="inputGroup-sizing-default">
-              YourNote
-            </span>
-            <input
-              value={this.state.myNote}
-              type="text"
-              name="myNote"
-              onChange={this.handleChange}
-              className="form-control"
-              aria-label="Sizing example input"
-              aria-describedby="inputGroup-sizing-default"
-            />
-          </div> */}
+          </form>
 
-          {/* <div class="form-floating">
-          <textarea
-            class="form-control"
-            name="comment"
-            value={this.state.comment}
-            onChange={this.handleChange}
-            placeholder="Leave a comment here"
-            id="floatingTextarea"
-          ></textarea>
-          <label for="floatingTextarea">Comments</label>
-        </div> */}
+          <div
+            className="cardEdit cardsBorder"
+            style={{ width: "20rem", backgroundColor: "#222831" }}
+          >
+            <div className="card-body">
+              <h5 className="card-title" style={{ color: "white" }}>
+                {this.state.cardName}
+              </h5>
+              <h6 className="card-subtitle mb-2" style={{ color: "#9a9998" }}>
+                {this.state.description}
+              </h6>
+              <p className="card-text" style={{ color: "white" }}>
+                {this.state.myNote}
+              </p>
+            </div>
+            <hr className="cardsHr" />
+            <div className="container">
+              <a className="card-link">
+                <i className="far fa-star" style={{ color: "cornsilk" }}></i>
+              </a>
 
-          <hr />
-          <button className="btn btn-primary" type="submit">
-            Save
-          </button>
-        </form>
+              <a className="card-link">
+                <i className="far fa-edit" style={{ color: "cornsilk" }}></i>
+              </a>
+              <a className="card-link">
+                <i
+                  className="far fa-trash-alt"
+                  style={{ color: "cornsilk" }}
+                ></i>
+              </a>
+            </div>
+          </div>
+
+
+
+
+          
+        </div>
       </div>
     );
   }

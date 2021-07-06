@@ -1,24 +1,21 @@
-import React from 'react'
-import {
-    BrowserRouter as Router,
-  } from "react-router-dom";
-import { Navbar,Nav } from 'react-bootstrap'
+import React from "react";
+import { Link } from "react-router-dom";
 
-class BootstrapNavbar extends React.Component{
-    
-    render(){
-        return(
-                <div class='navbar' className="row w-100">
-                    <Router>
-                    <Navbar>
-                    <Navbar.Brand>Iron Notes</Navbar.Brand>
-                    <Nav className="mr-auto">
-                    </Nav>
-                    </Navbar>
-                    </Router>
-            </div>
-        )  
-    }
+class BootstrapNavbar extends React.Component {
+
+  render() {
+    return (
+      <div>
+        <nav className="navbar navbar-light bg-light">
+          <div className="container-fluid">
+            <Link to="/" className="navbar-brand">
+              IronNote
+            </Link>
+          </div>
+        </nav>
+      </div>
+    );
+  }
 }
 
 export default BootstrapNavbar;

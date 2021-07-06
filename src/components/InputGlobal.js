@@ -1,15 +1,15 @@
 function TextInput(props) {
   return (
-    <div className="form-group mb-3">
-      <label htmlFor={props.id}>{props.label}</label>
+    <div className="input-group mb-3">
+      <label className="input-group-text" htmlFor={props.id}>{props.label}</label>
       <input
         id={props.id}
-        type={props.type}
-        className="form-control"
-        onChange={props.onChange}
+        maxLength="25"
+        required={true}
         value={props.value}
         name={props.name}
-        required={props.required}
+        onChange={props.onChange}
+        className="form-control"
       />
     </div>
   );
