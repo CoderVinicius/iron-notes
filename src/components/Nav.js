@@ -2,16 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class BootstrapNavbar extends React.Component {
+
   render() {
     return (
       <div>
         <nav className="navbar navbar-light bg-light">
           <div className="container-fluid">
-            <Link to="/" className="navbar-brand">IronNote</Link>
+            <Link to="/" className="navbar-brand">
+              IronNote
+            </Link>
             <form className="d-flex">
               <input
                 className="form-control me-2"
-                type="search"
+                type="text"
                 placeholder="Search"
                 aria-label="Search"
               />

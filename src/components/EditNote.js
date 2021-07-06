@@ -46,6 +46,8 @@ class EditNote extends React.Component {
   };
 
   render() {
+
+    console.log("eu spou o props edit", this.props)
     return (
       <div className="editNote">
         <h1 className="editTitle mb-3">Edit Notes</h1>
