@@ -9,6 +9,7 @@ class EditNote extends React.Component {
     comment: "",
     description: "",
     myNote: "",
+    favorite: false,
   };
 
   componentDidMount = async () => {

@@ -10,6 +10,7 @@ class NewNote extends Component {
       comment: "",
       description: "",
       myNote: "",
+      favorite: false,
     }
 
   handleChange = (event) => {

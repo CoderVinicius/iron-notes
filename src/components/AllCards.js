@@ -7,6 +7,7 @@ class AllCard extends React.Component {
   state = {
     cards: [],
     filtered: [],
+    favorites: [],
   };
 
   componentDidMount = async () => {
@@ -14,7 +15,7 @@ class AllCard extends React.Component {
         await axios
         .get("https://sao-ironrest.herokuapp.com/IronNote")
         .then((response) => {
-          this.setState({ cards: [...response.data], filtered: [...response.data]  });
+          this.setState({ cards: [...response.data], filtered: [...response.data], favorites: []  });
         });
     } catch (err) {
       console.log(err);
@@ -23,7 +24,6 @@ class AllCard extends React.Component {
 
 
   filterNotes = (input) => {
-    console.log(this.state.cards, '- cards')
     const filtered = this.state.cards.filter((el) =>
       el.cardName?.toLowerCase().includes(input?.toLowerCase())
     );
@@ -35,6 +35,25 @@ class AllCard extends React.Component {
     filtered.unshift(note);
     this.setState({ filtered });
   };
+
+  favoriteNote = (note) => {
+    this.state.favorites.push(note);
+    console.log(this.state.favorites);
+  }
+
+  unfavoriteNote = (note) => {
+    const noteIndex = this.state.favorites.indexOf(note);
+    // acha a nota com filter - joga no favorites - chama a api atualizando a nota - prop: favorite - boolean
+    this.state.favorites.splice(noteIndex, 1)
+  }
+
+  handleFavorite = (id) => {
+    if(this.state.favorites.includes(id)) {
+      this.unfavoriteNote(id);
+    } else {
+      this.favoriteNote(id);
+    }
+  }
 
 
   render() {
@@ -48,6 +67,7 @@ class AllCard extends React.Component {
               name={cards.cardName}
               description={cards.description}
               myNote={cards.myNote}
+              handleFavorite={this.handleFavorite}
             />
           );
         })}
