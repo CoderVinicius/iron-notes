@@ -30,6 +30,7 @@ body {
   display: flex;
   margin-bottom: 1em;
   box-shadow: inset 0 -1px 0 0 #78746e;
+  width: 100%;
 }
 
 .navbar-brand{
@@ -116,4 +117,9 @@ body {
 
 .cardEdit{
   margin-left: 4em;
+}
+
+
+.listSidebar{
+  margin-left: 3em;
 }

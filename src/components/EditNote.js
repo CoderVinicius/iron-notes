@@ -17,8 +17,9 @@ class EditNote extends React.Component {
       const response = await axios
         .get(`https://sao-ironrest.herokuapp.com/IronNote/${id}`)
         .then((response) => {
-          console.log(response.data);
+          delete response.data._id
           this.setState({ ...response.data });
+
         });
     } catch (err) {
       console.log(err);
@@ -33,11 +34,10 @@ class EditNote extends React.Component {
     console.log(this.state);
     let id = this.props.match.params.id;
     event.preventDefault();
-
     axios
       .put(`https://sao-ironrest.herokuapp.com/IronNote/${id}`, this.state)
       .then((response) => {
-        // console.log(response);
+        
         this.props.history.push("/")
       })
       .catch((err) => {
