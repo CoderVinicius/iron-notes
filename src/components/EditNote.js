@@ -14,7 +14,7 @@ class EditNote extends React.Component {
   componentDidMount = async () => {
     try {
       const id = this.props.match.params.id;
-       const response = await axios
+       await axios
         .get(`https://sao-ironrest.herokuapp.com/IronNote/${id}`)
         .then((response) => {
           console.log(response.data);
@@ -35,8 +35,7 @@ class EditNote extends React.Component {
 
     axios
       .post (`https://ironrest.herokuapp.com/IronNote/grupo4/${id}`, this.state)
-      .then((response) => {
-        // console.log(response);
+      .then(() => {
         this.props.history.push("/");
       })
       .catch((err) => {
@@ -64,12 +63,12 @@ class EditNote extends React.Component {
             Change={this.handleChange}
           />
 
-          <div class="form-floating">
+          <div className="form-floating">
             <textarea
               value={this.state.myNote}
               name="myNote"
               onChange={this.handleChange}
-              class="form-control"
+              className="form-control"
               placeholder="Leave a comment here"
             ></textarea>
             <label for="floatingTextarea">Comments</label>
