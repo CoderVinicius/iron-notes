@@ -85,8 +85,18 @@ body {
     text-decoration: none;
 }
 
+.container {
+  display: flex;
+  margin: 0;
+}
+
+.side{
+  width: 500px;
+}
+
 
 .input-group{
+<<<<<<< HEAD
   width: 25em;
 }
 
@@ -109,3 +119,7 @@ body {
 .cardEdit{
   margin-left: 4em;
 }
+=======
+  width: 35em;
+}
+>>>>>>> d1def754c183ea7018f8e08151b0042c00ae2e30
