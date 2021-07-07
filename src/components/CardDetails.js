@@ -2,6 +2,8 @@ import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 
+import GlobalCards from "./GlobalCards";
+
 class CardDetails extends React.Component {
   state = {
     _id: "",
@@ -24,8 +26,16 @@ class CardDetails extends React.Component {
     }
   };
 
+
+
   render() {
+
+
+
+
     return (
+
+
       <div className="d-flex flex-wrap" id={this.state._id}>
         <div to="/details">
           <div
@@ -46,7 +56,7 @@ class CardDetails extends React.Component {
             </div>
             <hr className="cardsHr" />
             <div className="container">
-              <Link to="#" className="card-link">
+              <Link to={`favorite/${this.state._id}`} className="card-link">
                 <i className="far fa-star" style={{ color: "cornsilk" }}></i>
               </Link>
 
@@ -75,6 +85,7 @@ class CardDetails extends React.Component {
         </div>
         
       </div>
+
     );
   }
 }

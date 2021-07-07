@@ -28,7 +28,7 @@ function App() {
           <Route path="/edit/:id" component={EditNote} />
           <Route path="/delete/:id" component={DeleteNote} />
           <Route path="/favorite/:id" component={FavoriteNote} />
-          <Route path="/favoriteNotes" component={AllCard} />
+          <Route exact path="/favoriteNotes" component={AllCard} />
         </div>
       </div>
     </BrowserRouter>

@@ -15,7 +15,11 @@ class AllCard extends React.Component {
       axios
         .get("https://sao-ironrest.herokuapp.com/IronNote")
         .then((response) => {
-          this.setState({ cards: [...response.data], filtered: [...response.data], favorites: response.data.filter((card) => card.favorite)  });
+          this.setState({
+            cards: [...response.data],
+            filtered: [...response.data],
+            favorites: response.data.filter((card) => card.favorite),
+          });
         });
     } catch (err) {
       console.log(err);
@@ -36,27 +40,29 @@ class AllCard extends React.Component {
   };
 
   render() {
-    if (this.props.match.path === '/favoriteNotes') {
+    console.log("eu sou State from AlCards", this.props.match);
+
+    if (this.props.match.path === "/favoriteNotes") {
       this.state.filtered = this.state.favorites;
       this.state.filtered.map((el) => console.log(el));
     }
 
-    return (<div>
-      <Search filterNotes={this.filterNotes}/>
-      <div className="d-flex flex-wrap">
-        
-        {this.state.filtered.map((card) => {
-          return (
-            <GlobalCards
-              id={card._id}
-              name={card.cardName}
-              description={card.description}
-              myNote={card.myNote}
-              favorite={card.favorite}
-            />
-          );
-        })}
-      </div>
+    return (
+      <div>
+        <Search filterNotes={this.filterNotes} />
+        <div className="d-flex flex-wrap">
+          {this.state.filtered.map((card) => {
+            return (
+              <GlobalCards
+                id={card._id}
+                name={card.cardName}
+                description={card.description}
+                myNote={card.myNote}
+                favorite={card.favorite}
+              />
+            );
+          })}
+        </div>
       </div>
     );
   }

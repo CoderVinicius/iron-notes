@@ -23,6 +23,7 @@ class FavoriteNote extends Component {
     });
   };
   render() {
+    console.log("eu sou favorito",this.state)
     return <div>Favoriting...</div>;
   }
 }

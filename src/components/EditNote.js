@@ -18,9 +18,8 @@ class EditNote extends React.Component {
       await axios
         .get(`https://sao-ironrest.herokuapp.com/IronNote/${id}`)
         .then((response) => {
-          delete response.data._id
+          delete response.data._id;
           this.setState({ ...response.data });
-
         });
     } catch (err) {
       console.log(err);
@@ -38,7 +37,7 @@ class EditNote extends React.Component {
     axios
       .put(`https://sao-ironrest.herokuapp.com/IronNote/${id}`, this.state)
       .then(() => {
-        this.props.history.push("/")
+        this.props.history.push("/");
       })
       .catch((err) => {
         console.log(err);
@@ -50,7 +49,6 @@ class EditNote extends React.Component {
       <div className="editNote">
         <h1 className="editTitle mb-3">Edit Notes</h1>
         <div className="d-flex align-items-start">
-
           <form onSubmit={this.handleSubmit}>
             <InputGlobal
               label="Name Card"
@@ -80,40 +78,42 @@ class EditNote extends React.Component {
               <label for="floatingTextarea">Note</label>
             </div>
             <div>
-  <div>
-            <span className="editComment">Comment note is not required, you can review it in detail</span>
-          <InputGlobal
-              label="Comment"
-              value={this.state.comment}
-              name="comment"
-              onChange={this.handleChange}
-            />
+              <div>
+                <span className="editComment">
+                  You can review your comment in details
+                </span>
+                <InputGlobal
+                  label="Comment"
+                  value={this.state.comment}
+                  name="comment"
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div
+                className="card cardsBorder"
+                style={{
+                  width: "18rem",
+                  height: "8rem",
+                  backgroundColor: "#222831",
+                }}
+              >
+                <div className="card-body">
+                  <h5 className="card-title" style={{ color: "white" }}>
+                    Your Comment:
+                  </h5>
+                  <p className="card-text" style={{ color: "white" }}>
+                    {this.state.comment}
+                  </p>
+                </div>
+              </div>
             </div>
-            <div
-            className="card cardsBorder"
-            style={{ width: "18rem", height: "8rem", backgroundColor: "#222831" }}
-          >
-             <div className="card-body">
-            <h5 className="card-title" style={{ color: "white" }}>
-                Your Comment:
-              </h5>
-            <p className="card-text" style={{ color: "white" }}>
-          {this.state.comment}
-        </p>
-        </div>
-        
-        </div>
-        </div>
-            
+
             <hr />
             <div className="form-group">
-            <button type="submit" className="btn btn-primary">
-              Save
-            </button>
-          </div>
-
-
-
+              <button type="submit" className="btn btn-primary">
+                Save
+              </button>
+            </div>
           </form>
 
           <div
@@ -132,30 +132,24 @@ class EditNote extends React.Component {
               </p>
             </div>
             <div className="buttoNote">
-            <hr className="cardsHr" />
-            <div className=" container">
-              <a className="card-link">
-                <i className="far fa-star" style={{ color: "cornsilk" }}></i>
-              </a>
+              <hr className="cardsHr" />
+              <div className=" container">
+                <a className="card-link">
+                  <i className="far fa-star" style={{ color: "cornsilk" }}></i>
+                </a>
 
-              <a className="card-link">
-                <i className="far fa-edit" style={{ color: "cornsilk" }}></i>
-              </a>
-              <a className="card-link">
-                <i
-                  className="far fa-trash-alt"
-                  style={{ color: "cornsilk" }}
-                ></i>
-              </a>
+                <a className="card-link">
+                  <i className="far fa-edit" style={{ color: "cornsilk" }}></i>
+                </a>
+                <a className="card-link">
+                  <i
+                    className="far fa-trash-alt"
+                    style={{ color: "cornsilk" }}
+                  ></i>
+                </a>
+              </div>
             </div>
-            </div>
-
           </div>
-
-
-
-
-          
         </div>
       </div>
     );
