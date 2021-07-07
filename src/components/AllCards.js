@@ -7,27 +7,26 @@ class AllCard extends React.Component {
   state = {
     cards: [],
     filtered: [],
+    favorites: [],
   };
 
-  componentDidMount = async () => {
+  componentDidMount = () => {
     try {
-      const response = await axios
+      axios
         .get("https://sao-ironrest.herokuapp.com/IronNote")
         .then((response) => {
-          this.setState({ cards: [...response.data], filtered: [...response.data]  });
+          this.setState({ cards: [...response.data], filtered: [...response.data], favorites: response.data.filter((card) => card.favorite)  });
         });
     } catch (err) {
       console.log(err);
     }
   };
 
-
   filterNotes = (input) => {
-    console.log(this.state.cards, '- cards')
     const filtered = this.state.cards.filter((el) =>
       el.cardName?.toLowerCase().includes(input?.toLowerCase())
     );
-    this.setState({ filtered: filtered });
+    this.setState({ filtered });
   };
 
   pushNote = (note) => {
@@ -36,24 +35,26 @@ class AllCard extends React.Component {
     this.setState({ filtered });
   };
 
-
   render() {
+    if (this.props.match.path === '/favoriteNotes') {
+      this.state.filtered = this.state.favorites;
+      this.state.filtered.map((el) => console.log(el));
+    }
+
     return (
-      <div>
-      <Search filterNotes={this.filterNotes}/>
       <div className="d-flex flex-wrap">
-        
-        {this.state.filtered.map((cards) => {
+        <Search filterNotes={this.filterNotes}/>
+        {this.state.filtered.map((card) => {
           return (
             <GlobalCards
-              id={cards._id}
-              name={cards.cardName}
-              description={cards.description}
-              myNote={cards.myNote}
+              id={card._id}
+              name={card.cardName}
+              description={card.description}
+              myNote={card.myNote}
+              favorite={card.favorite}
             />
           );
         })}
-      </div>
       </div>
     );
   }

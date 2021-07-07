@@ -14,7 +14,7 @@ class CardDetails extends React.Component {
   componentDidMount = async () => {
     try {
       let id = this.props.match.params.id;
-      const response = await axios
+        await axios
         .get(`https://sao-ironrest.herokuapp.com/IronNote/${id}`)
         .then((response) => {
           this.setState({ ...response.data });
@@ -42,11 +42,14 @@ class CardDetails extends React.Component {
               <p className="card-text" style={{ color: "white" }}>
                 {this.state.myNote}
               </p>
+              <p className="card-text" style={{ color: "white" }}>
+                {this.state.comment}
+              </p>
             </div>
             <hr className="cardsHr" />
             <div className="container">
               <Link to="#" className="card-link">
-                <i class="far fa-star" style={{ color: "cornsilk" }}></i>
+                <i className="far fa-star" style={{ color: "cornsilk" }}></i>
               </Link>
 
               <Link to={`/edit/${this.state._id}`} className="card-link">

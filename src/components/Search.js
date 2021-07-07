@@ -6,7 +6,6 @@ class Search extends React.Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(this.state.input, '- input' );
     if (this.state.input !== prevState.input) {
        this.props.filterNotes(this.state.input);
     }

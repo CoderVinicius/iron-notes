@@ -10,6 +10,7 @@ import NewNote from "./NewNote";
 import CardDetails from "./CardDetails";
 import EditNote from "./EditNote";
 import DeleteNote from "./Delete";
+import FavoriteNote from "./Favorite";
 
 
 function App() {
@@ -25,7 +26,9 @@ function App() {
           <Route path="/newnote" component={NewNote} />
           <Route exact path="/details/:id" component={CardDetails} />
           <Route path="/edit/:id" component={EditNote} />
-          <Route path="/Delete/:id" component={DeleteNote} />
+          <Route path="/delete/:id" component={DeleteNote} />
+          <Route path="/favorite/:id" component={FavoriteNote} />
+          <Route path="/favoriteNotes" component={AllCard} />
         </div>
       </div>
     </BrowserRouter>
