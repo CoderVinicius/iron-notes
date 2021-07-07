@@ -42,6 +42,9 @@ class CardDetails extends React.Component {
               <p className="card-text" style={{ color: "white" }}>
                 {this.state.myNote}
               </p>
+              <p className="card-text" style={{ color: "white" }}>
+                {this.state.comment}
+              </p>
             </div>
             <hr className="cardsHr" />
             <div className="container">

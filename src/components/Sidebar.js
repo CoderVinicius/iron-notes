@@ -14,7 +14,7 @@ class Sidebar extends React.Component {
             <Link className="list-group-item" to="/">
               All Notes
             </Link>
-            <Link className="list-group-item" to="/bfgbfg">
+            <Link className="list-group-item" to="/favoriteNotes">
               Favorites
             </Link>
           </div>

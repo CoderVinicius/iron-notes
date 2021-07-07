@@ -3,13 +3,19 @@ import axios from "axios";
 
 
 class FavoriteNote extends Component {
+  state = {
+    cardName: this.props.location.query.name,
+    comment: this.props.location.query.comment,
+    description: this.props.location.query.description,
+    myNote: this.props.location.query.myNote,
+  };
+
   componentDidMount = () => {
     const id = this.props.match.params.id;
 
     axios
-    .post(`https://ironrest.herokuapp.com/IronNote/grupo4/${id}`, { ...this.props, favorite: !this.props.favorite })
+    .put(`https://sao-ironrest.herokuapp.com/IronNote/${id}`, { ...this.state, favorite: !this.props.location.query.favorite })
     .then((response) => {
-        console.log(response);
         this.props.history.push("/");
       })
     .catch((err) => {

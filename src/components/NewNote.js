@@ -67,7 +67,7 @@ class NewNote extends Component {
             type="text"
             name="comment"
             onChange={this.handleChange}
-            value={this.state.Comment}
+            value={this.state.comment}
             required
           />
 

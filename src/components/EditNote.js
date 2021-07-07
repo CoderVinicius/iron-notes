@@ -15,7 +15,7 @@ class EditNote extends React.Component {
     try {
       const id = this.props.match.params.id;
 
-      const response = await axios
+      await axios
         .get(`https://sao-ironrest.herokuapp.com/IronNote/${id}`)
         .then((response) => {
           delete response.data._id
@@ -32,13 +32,12 @@ class EditNote extends React.Component {
   };
 
   handleSubmit = (event) => {
-    console.log(this.state);
     let id = this.props.match.params.id;
     event.preventDefault();
+
     axios
       .put(`https://sao-ironrest.herokuapp.com/IronNote/${id}`, this.state)
-      .then((response) => {
-        
+      .then(() => {
         this.props.history.push("/")
       })
       .catch((err) => {
@@ -47,8 +46,6 @@ class EditNote extends React.Component {
   };
 
   render() {
-
-    console.log("eu spou o props edit", this.props)
     return (
       <div className="editNote">
         <h1 className="editTitle mb-3">Edit Notes</h1>
@@ -76,11 +73,19 @@ class EditNote extends React.Component {
                 name="myNote"
                 onChange={this.handleChange}
                 className="textWrap form-control"
-                placeholder="Leave a comment here"
+                placeholder="Write your note here"
                 required
               ></textarea>
-              <label for="floatingTextarea">Comments</label>
+              <label for="floatingTextarea">Note</label>
             </div>
+
+            <InputGlobal
+              label="Comment"
+              value={this.state.comment}
+              name="comment"
+              onChange={this.handleChange}
+              required
+            />
             <hr />
             <div className="form-group">
             <button type="submit" className="btn btn-primary">
