@@ -22,6 +22,7 @@ class Search extends React.Component {
       <div>
         <input
           type="text"
+          maxLength="30"
           className="searchInput form-control me-5"
           onChange={this.handleSearch}
           placeholder="search..."

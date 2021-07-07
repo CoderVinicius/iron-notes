@@ -26,7 +26,7 @@ class CardDetails extends React.Component {
 
   render() {
     return (
-      <div id={this.state._id}>
+      <div className="d-flex flex-wrap" id={this.state._id}>
         <div to="/details">
           <div
             className="card cardsBorder"
@@ -42,9 +42,7 @@ class CardDetails extends React.Component {
               <p className="card-text" style={{ color: "white" }}>
                 {this.state.myNote}
               </p>
-              <p className="card-text" style={{ color: "white" }}>
-                {this.state.comment}
-              </p>
+              
             </div>
             <hr className="cardsHr" />
             <div className="container">
@@ -61,6 +59,21 @@ class CardDetails extends React.Component {
             </div>
           </div>
         </div>
+        <div
+            className="card cardsBorder"
+            style={{ width: "18rem", height: "8rem", backgroundColor: "#222831" }}
+          >
+             <div className="card-body">
+            <h5 className="card-title" style={{ color: "white" }}>
+                Your Comment:
+              </h5>
+            <p className="card-text" style={{ color: "white" }}>
+          {this.state.comment}
+        </p>
+        </div>
+        
+        </div>
+        
       </div>
     );
   }
