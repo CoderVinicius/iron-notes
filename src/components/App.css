@@ -18,24 +18,24 @@ body {
 
 
 
-.cardsBorder{
-    display: flex;
-    flex-wrap: wrap;
-    border: 2px solid;
-    padding: 10px;
-    border-radius: 30px;
-    margin: 15px;
-    margin-left: 4em;
-    box-shadow: 0 0 0.9em rgb(30, 22, 22);
+.cardsBorder {
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid;
+  padding: 10px;
+  border-radius: 30px;
+  margin: 15px;
+  margin-left: 4em;
+  box-shadow: 0 0 0.9em rgb(30, 22, 22);
 }
 
-.cardsHr{
-    color:white;
-    width: 16rem;   
+.cardsHr {
+  color: white;
+  width: 16rem;
 }
 
-.card-body{
-    text-decoration: none;
+.card-body {
+  text-decoration: none;
 }
 
 .container {
@@ -43,16 +43,15 @@ body {
   margin: 0;
 }
 
-.side{
+.side {
   width: 500px;
 }
 
-
-.input-group{
+.input-group {
   width: 25em;
 }
 
-.list-group-item{
+.list-group-item {
   width: 10em;
   margin-right: 4em;
   background-color: #222831;
@@ -60,22 +59,20 @@ body {
   font-size: 20px;
 }
 
-.editNote{
+.editNote {
   margin-top: 1em;
   margin-left: 1.5em;
 }
 
-.editTitle{
+.editTitle {
   color: rgb(255, 255, 255);
 }
 
-
-.listSidebar{
+.listSidebar {
   margin-left: 1em;
 }
 
-
-.searchInput{
+.searchInput {
   width: 20em;
   margin-top: 1em;
   margin-left: 4em;
@@ -87,11 +84,11 @@ body {
   align-items: center;
 }
 
-.editComment{
+.editComment {
   color: #fff;
   font-size: small;
 }
 
-.textWrap{
+.textWrap {
   margin-bottom: 1.5em;
 }
