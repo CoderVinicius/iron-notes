@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
+import FavoriteNote from "./Favorite";
 
 class CardDetails extends React.Component {
   state = {
@@ -51,7 +52,6 @@ class CardDetails extends React.Component {
               <Link to="#" className="card-link">
                 <i className="far fa-star" style={{ color: "cornsilk" }}></i>
               </Link>
-
               <Link to={`/edit/${this.state._id}`} className="card-link">
                 <i className="far fa-edit" style={{ color: "cornsilk" }}></i>
               </Link>
