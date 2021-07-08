@@ -1,6 +1,6 @@
 ![image](https://user-images.githubusercontent.com/83282533/124975178-0875fe00-e02e-11eb-8c92-ecf20c584c55.png)
 
-Click [HERE](https://60e74adee5c754081b1ff141--wonderful-shirley-6740f3.netlify.app/) to use **IronNote**
+Click [HERE](https://iron-note.netlify.app/) to use **IronNote**
 
 ## Introduction
 
