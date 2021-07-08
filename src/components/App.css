@@ -1,32 +1,28 @@
-
-
 body {
-    background-color: #4a4641;
-    font-family: 'Google Sans',Roboto,Arial,sans-serif;
-    max-width: 80%;
+  background-color: #4a4641;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  max-width: 80%;
   margin: auto;
 }
 
-
 .sidebar {
-      background-color: #fff;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      display: flex;
-      -webkit-flex-direction: column;
-      flex-direction: column;
-      height: calc(100% - 64px);
-      min-height: auto;
-      overflow: hidden;
-      padding-top: 8px;
-      position: fixed;
-      top: 64px;
-      -webkit-transition-duration: 150ms;
-      transition-duration: 150ms;
-      width: 280px;
-      z-index: 985;
-  }
-
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  height: calc(100% - 64px);
+  min-height: auto;
+  overflow: hidden;
+  padding-top: 8px;
+  position: fixed;
+  top: 64px;
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms;
+  width: 280px;
+  z-index: 985;
+}
 
 .navbar {
   display: flex;
@@ -35,30 +31,30 @@ body {
   width: 100%;
 }
 
-.navbar-brand{
+.navbar-brand {
   margin-left: 40px;
   margin-right: 250px;
 }
 
 .btn-sidebar {
   -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    border: 1px solid transparent;
-    -webkit-border-radius: 0 25px 25px 0;
-    border-radius: 0 25px 25px 0;
-    color: #202124;
-    display: flex;
-    -webkit-align-items: center;
-    align-items: center;
-    letter-spacing: .01785714em;
-    font-family: 'Google Sans',Roboto,Arial,sans-serif;
-    font-size: .875rem;
-    font-weight: 500;
-    line-height: 1.25rem;
-    height: 48px;
-    min-width: 48px;
-    overflow: hidden;
-    width: 100%;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  -webkit-border-radius: 0 25px 25px 0;
+  border-radius: 0 25px 25px 0;
+  color: #202124;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  letter-spacing: 0.01785714em;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  height: 48px;
+  min-width: 48px;
+  overflow: hidden;
+  width: 100%;
 }
 
 .btn-primary {
@@ -68,24 +64,24 @@ body {
   margin-bottom: 10 px;
 }
 
-.cardsBorder{
-    display: flex;
-    flex-wrap: wrap;
-    border: 2px solid;
-    padding: 10px;
-    border-radius: 30px;
-    margin: 15px;
-    margin-left: 4em;
-    box-shadow: 0 0 0.9em rgb(30, 22, 22);
+.cardsBorder {
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid;
+  padding: 10px;
+  border-radius: 30px;
+  margin: 15px;
+  margin-left: 4em;
+  box-shadow: 0 0 0.9em rgb(30, 22, 22);
 }
 
-.cardsHr{
-    color:white;
-    width: 16rem;   
+.cardsHr {
+  color: white;
+  width: 16rem;
 }
 
-.card-body{
-    text-decoration: none;
+.card-body {
+  text-decoration: none;
 }
 
 .container {
@@ -93,37 +89,34 @@ body {
   margin: 0;
 }
 
-.side{
+.side {
   width: 500px;
 }
 
-
-.input-group{
+.input-group {
   width: 25em;
 }
 
-.list-group-item{
+.list-group-item {
   width: 10em;
   margin-right: 4em;
   background-color: rgb(228, 212, 212);
 }
 
-.editNote{
+.editNote {
   margin-top: 1em;
   margin-left: 1.5em;
 }
 
-.editTitle{
+.editTitle {
   color: rgb(255, 255, 255);
 }
 
-
-.listSidebar{
+.listSidebar {
   margin-left: 1em;
 }
 
-
-.searchInput{
+.searchInput {
   width: 20em;
   margin-top: 1em;
   margin-left: 4em;
@@ -131,11 +124,11 @@ body {
   background-color: rgb(228, 212, 212);
 }
 
-.editComment{
+.editComment {
   color: #fff;
   font-size: small;
 }
 
-.textWrap{
+.textWrap {
   margin-bottom: 1.5em;
 }

@@ -56,9 +56,6 @@ class CardDetails extends React.Component {
             </div>
             <hr className="cardsHr" />
             <div className="container">
-              <Link to={`favorite/${this.state._id}`} className="card-link">
-                <i className="far fa-star" style={{ color: "cornsilk" }}></i>
-              </Link>
 
               <Link to={`/edit/${this.state._id}`} className="card-link">
                 <i className="far fa-edit" style={{ color: "cornsilk" }}></i>

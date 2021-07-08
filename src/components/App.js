@@ -12,7 +12,6 @@ import EditNote from "./EditNote";
 import DeleteNote from "./Delete";
 import FavoriteNote from "./Favorite";
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -28,7 +27,7 @@ function App() {
           <Route path="/edit/:id" component={EditNote} />
           <Route path="/delete/:id" component={DeleteNote} />
           <Route path="/favorite/:id" component={FavoriteNote} />
-          <Route exact path="/favoriteNotes" component={AllCard} />
+          <Route path="/favoriteNotes" component={AllCard} />
         </div>
       </div>
     </BrowserRouter>
