@@ -1,22 +1,27 @@
-import React from 'react'
+import React from "react";
 
-import { NavLink } from 'react-router-dom'
-  
+import { Link } from "react-router-dom";
 
-class Sidebar extends React.Component{
-
-    render(){
-        return(
-          
-            <div class='side'>
-                   <div class='sidebar' className="flex-column">
-                   <NavLink activeClassName='active' class='btn-sidebar' to="/NewNote">Create New Note</NavLink>
-                    <NavLink activeClassName='active' class='btn-sidebar' to="/">All Notes</NavLink>
-                    <NavLink activeClassName='active' class='btn-sidebar' to="/">Favorites</NavLink>
-                    </div>
-           </div>
-        )  
-    }
+class Sidebar extends React.Component {
+  render() {
+    return (
+      <div>
+        <ul className="listSidebar list-group mt-3">
+          <div className="sidebar" className="flex-column">
+            <Link className="list-group-item" to="/NewNote">
+              Create New Note
+            </Link>
+            <Link className="list-group-item" to="/">
+              All Notes
+            </Link>
+            <Link className="list-group-item" to="/favoriteNotes">
+              Favorites
+            </Link>
+          </div>
+        </ul>
+      </div>
+    );
+  }
 }
 
 export default Sidebar;

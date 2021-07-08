@@ -13,15 +13,16 @@ function GlobalCards(props) {
           </Link>
           <hr className="cardsHr"/>
           <div className="container">
-          <Link to="#" className="card-link">
-          <i class="far fa-star" style={{color:"cornsilk"}}></i>
+          <Link to={{pathname: `favorite/${props.id}`, query: {...props}}} className="card-link">
+            <i className="far fa-star" style={ props.favorite ? { color: "yellow" }: { color:"cornsilk" }}></i>
           </Link>
           
           <Link to={`/edit/${props.id}`} className="card-link">
-          <i class="far fa-edit" style={{color:"cornsilk"}}></i>
+            <i className="far fa-edit" style={{color:"cornsilk"}}></i>
           </Link>
-          <Link to={`/Delete/${props.id}`} className="card-link">
-          <i class="far fa-trash-alt" style={{color:"cornsilk"}}></i>
+
+          <Link to={`/delete/${props.id}`} className="card-link">
+            <i className="far fa-trash-alt" style={{color:"cornsilk"}}></i>
           </Link>
           </div>
         </div>

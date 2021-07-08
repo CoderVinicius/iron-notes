@@ -3,22 +3,21 @@ import axios from "axios";
 
 import InputGlobal from "./InputGlobal";
 
-
 class NewNote extends Component {
-    state = {
-      cardName: "",
-      comment: "",
-      description: "",
-      myNote: "",
-    }
+  state = {
+    cardName: "",
+    comment: "",
+    description: "",
+    myNote: "",
+    favorite: false,
+  };
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  
   handleSubmit = (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
 
     axios
       .post("https://sao-ironrest.herokuapp.com/IronNote", this.state)
@@ -33,9 +32,8 @@ class NewNote extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Create Note</h1>
-        <hr />
+      <div className="editNote">
+        <h1 className="editTitle mb-3">Create Note</h1>
         <form onSubmit={this.handleSubmit}>
           <InputGlobal
             label="Name Card"
@@ -53,26 +51,30 @@ class NewNote extends Component {
             value={this.state.Description}
             required
           />
+          <div className="form-floating">
+            <textarea
+              value={this.state.myNote}
+              name="myNote"
+              onChange={this.handleChange}
+              className="textWrap form-control"
+              placeholder="Write your note here"
+              required
+            ></textarea>
+            <label for="floatingTextarea">Note</label>
+          </div>
+          <span className="editComment">
+            Comment note is not required, you can review it in detail
+          </span>
           <InputGlobal
-            label="YourNote"
-            type="text"
-            name="myNote"
-            onChange={this.handleChange}
-            value={this.state.MyNote}
-            required
-          />
-           <InputGlobal
-            label="Comments"
-            type="text"
+            label="Comment"
+            value={this.state.comment}
             name="comment"
             onChange={this.handleChange}
-            value={this.state.Comment}
-            required
           />
 
           <hr />
 
-          <div className="form-group">
+          <div className="saveButton form-group">
             <button type="submit" className="btn btn-primary">
               Save
             </button>
