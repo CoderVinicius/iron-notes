@@ -68,7 +68,7 @@ class AllCard extends React.Component {
 
     return (
       <div>
-        <Search filterNotes={this.filterNotes} />
+        <Search filterNotes={this.filterNotes}/>
         <div className="d-flex flex-wrap">
           {this.state.filtered.map((card) => {
             return (
