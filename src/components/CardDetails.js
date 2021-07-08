@@ -3,6 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FavoriteNote from "./Favorite";
 
+import GlobalCards from "./GlobalCards";
+
 class CardDetails extends React.Component {
   state = {
     _id: "",
@@ -25,9 +27,17 @@ class CardDetails extends React.Component {
     }
   };
 
+
+
   render() {
+
+
+
+
     return (
-      <div id={this.state._id}>
+
+
+      <div className="d-flex flex-wrap" id={this.state._id}>
         <div to="/details">
           <div
             className="card cardsBorder"
@@ -43,13 +53,11 @@ class CardDetails extends React.Component {
               <p className="card-text" style={{ color: "white" }}>
                 {this.state.myNote}
               </p>
-              <p className="card-text" style={{ color: "white" }}>
-                {this.state.comment}
-              </p>
+              
             </div>
             <hr className="cardsHr" />
             <div className="container">
-              <Link to="#" className="card-link">
+              <Link to={`favorite/${this.state._id}`} className="card-link">
                 <i className="far fa-star" style={{ color: "cornsilk" }}></i>
               </Link>
               <Link to={`/edit/${this.state._id}`} className="card-link">
@@ -61,7 +69,23 @@ class CardDetails extends React.Component {
             </div>
           </div>
         </div>
+        <div
+            className="card cardsBorder"
+            style={{ width: "18rem", height: "8rem", backgroundColor: "#222831" }}
+          >
+             <div className="card-body">
+            <h5 className="card-title" style={{ color: "white" }}>
+                Your Comment:
+              </h5>
+            <p className="card-text" style={{ color: "white" }}>
+          {this.state.comment}
+        </p>
+        </div>
+        
+        </div>
+        
       </div>
+
     );
   }
 }

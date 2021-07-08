@@ -6,12 +6,12 @@ class BootstrapNavbar extends React.Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-light bg-light">
+        <nav className="navbar text-justify #222831">
           <div className="container-fluid">
             <Link to="/" className="navbar-brand">
               IronNote
             </Link>
-          </div>
+          </div> 
         </nav>
       </div>
     );

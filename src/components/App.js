@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import "./App.css";
 
-import Nav from "./Nav";
+
 import Sidebar from "./Sidebar";
 import AllCard from "./AllCards";
 import NewNote from "./NewNote";
@@ -17,7 +17,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className="mt-4">
-        <Nav />
+      <div className="navbar-brand">
+      <h1>IronNote</h1>
+      </div>
         <div className="d-flex">
           <Sidebar />
           <div className="d-flex flex-wrap">
@@ -28,7 +30,7 @@ function App() {
           <Route path="/edit/:id" component={EditNote} />
           <Route path="/delete/:id" component={DeleteNote} />
           <Route path="/favorite/:id" component={FavoriteNote} />
-          <Route path="/favoriteNotes" component={AllCard} />
+          <Route exact path="/favoriteNotes" component={AllCard} />
         </div>
       </div>
     </BrowserRouter>
