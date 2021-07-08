@@ -134,14 +134,13 @@ class EditNote extends React.Component {
             <div className="buttoNote">
               <hr className="cardsHr" />
               <div className=" container">
-                <a className="card-link">
+                <a href className="card-link">
                   <i className="far fa-star" style={{ color: "cornsilk" }}></i>
                 </a>
-
-                <a className="card-link">
+                <a href className="card-link">
                   <i className="far fa-edit" style={{ color: "cornsilk" }}></i>
                 </a>
-                <a className="card-link">
+                <a href className="card-link">
                   <i
                     className="far fa-trash-alt"
                     style={{ color: "cornsilk" }}

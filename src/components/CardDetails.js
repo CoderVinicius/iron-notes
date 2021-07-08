@@ -1,9 +1,8 @@
 import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
-import FavoriteNote from "./Favorite";
 
-import GlobalCards from "./GlobalCards";
+
 
 class CardDetails extends React.Component {
   state = {

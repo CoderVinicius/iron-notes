@@ -7,7 +7,7 @@ class Sidebar extends React.Component {
     return (
       <div>
         <ul className="listSidebar list-group mt-3">
-          <div className="sidebar" className="flex-column">
+          <div className="flex-column">
             <Link className="list-group-item" to="/NewNote">
               Create New Note
             </Link>
