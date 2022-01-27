@@ -7,7 +7,7 @@ Click [HERE](https://iron-note.netlify.app/) to use **IronNote**
 - The project was created to make easy to create, save and edit notes.
 
 ## Tech used
-
+ 
 - React
 - JavaScript
 - CSS
